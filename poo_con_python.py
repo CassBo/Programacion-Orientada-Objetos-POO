@@ -46,6 +46,27 @@ class Personaje:
         self.__fuerza = fuerza
 
 
+
+
+class Guerrero(Personaje):
+    def _init_(self, nombre, fuerza, inteligencia, defensa, vida, espada):
+        super().__init__(nombre, fuerza, inteligencia, defensa, vida)
+        self.espada = espada
+Hércules = Guerrero("Hércules", 80, 50, 100, 100)
+Hércules.atributos
+
+
+
+
+
+
+
+
+
+
+
+
+
 #Variable del constructor de vacío de la clase
 mi_personaje = Personaje("trakalosa de monterrey", 70, 90, 50, 100)
 mi_enemigo = Personaje("La arrolladora banda el limon", 60, 90, 40, 100)
