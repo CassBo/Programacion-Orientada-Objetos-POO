@@ -160,3 +160,23 @@ hercules.usar_pocion('pocion_fuerza')
 trakalosa.atributos()
 hercules.atributos()
 dios.atributos()
+
+# Identificar al personaje con la mayor cantidad de vida
+personajes = [trakalosa, hercules, dios]
+personaje_mayor_vida = max(personajes, key=lambda p: p._vida)
+print(f"El personaje con la mayor cantidad de vida es: {personaje_mayor_vida._nombre} con {personaje_mayor_vida._vida} puntos de vida.")
+
+# Calcular la suma total de la inteligencia de todos los personajes
+suma_inteligencia = sum(p._inteligencia for p in personajes)
+print(f"La suma total de la inteligencia de todos los personajes es: {suma_inteligencia}")
+
+# Filtrar personajes cuya vida sea mayor a un valor dado por el usuario
+valor_vida = int(input("Introduce un valor de vida para filtrar personajes: "))
+personajes_filtrados = [p for p in personajes if p._vida > valor_vida]
+
+if personajes_filtrados:
+    print("Personajes con vida mayor a", valor_vida, ":")
+    for p in personajes_filtrados:
+        print(f"{p._nombre} - Vida: {p._vida}")
+else:
+    print(f"No hay personajes con vida mayor a {valor_vida}.")
